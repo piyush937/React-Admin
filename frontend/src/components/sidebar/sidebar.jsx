@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./sidebar.css"
 import { LineStyle, Timeline , TrendingUp , PermIdentity  , Storefront , Paid , Email , Feedback , Message , Work , Report } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
-export default function sidebar() {
+
+export default function sidebar({handleLogout}) {
   return (
     <div className='Sidebar'>
         <div className="sidebarWrapper">
@@ -88,9 +89,11 @@ export default function sidebar() {
               Analytics
              </li>
 
-             <li className="sidebarItems">
+             <li className="sidebarItems"
+             onClick={handleLogout}
+             >
               <Report className='sidebarIcons'/>
-              Reports
+              Logout
              </li>
              </ul>
             </div>
